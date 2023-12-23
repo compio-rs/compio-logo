@@ -1,0 +1,36 @@
+\documentclass[tikz]{standalone}
+\usepackage{xcolor}
+\begin{document}
+\definecolor{myblue}{RGB}{134,224,255}
+\newcommand{\socketpath}{
+    ({15*cos(15)},{-15*sin(15)}) arc (-15:-90:10) --
+    (1,{-10-5*sin(15)}) arc (90:180:1) arc (0:-90:1) --
+    (-5,{-12-5*sin(15)}) arc (270:180:1) --
+    (-6,{-5-5*sin(15)}) --
+    (-15,{-5-5*sin(15)}) arc (210:150:3) --
+    (-6,{-2-5*sin(15)}) --
+    % mirror
+    (-6,{2+5*sin(15)}) --
+    (-15,{2+5*sin(15)}) arc (210:150:3) --
+    (-6,{5+5*sin(15)}) --
+    (-6,{11+5*sin(15)}) arc (180:90:1) --
+    (-1,{12+5*sin(15)}) arc (90:0:1) arc (180:270:1) --
+    ({5*cos(15)},{10+5*sin(15)}) arc (90:15:10)
+}
+\begin{tikzpicture}
+    \useasboundingbox (-30,-30) rectangle (30,30);
+    \fill[myblue]
+    ({30*cos(15)},{30*sin(15)}) arc (15:345:30) --
+    \socketpath --
+    cycle;
+\end{tikzpicture}
+\newpage
+\begin{tikzpicture}
+    \useasboundingbox (-30,-30) rectangle (30,30);
+    \fill[myblue] (-30,-30) rectangle (30,30) --
+    ({30*cos(15)},{30*sin(15)}) arc (15:345:30) --
+    \socketpath --
+    ({30*cos(15)},{30*sin(15)}) --
+    cycle;
+\end{tikzpicture}
+\end{document}
