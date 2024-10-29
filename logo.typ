@@ -11,7 +11,7 @@
 }
 
 #let draw(fill: none, stroke: none, ratio: 1, text-fill: none) = {
-  set page(margin: 2pt, fill: none, width: auto, height: auto)
+  set page(margin: 1em, fill: none, width: auto, height: auto)
 
   let canvas = cetz.canvas(
     length: 1pt,
@@ -19,7 +19,7 @@
       close: true,
       fill: fill,
       stroke: stroke,
-      logo(6, ratio),
+      logo(40, ratio),
     ),
   )
 
@@ -27,13 +27,17 @@
     grid(
       align: horizon,
       columns: (auto, auto),
-      gutter: .5pt,
+      gutter: .4em,
       canvas,
-      text(
-        font: "Metropolis",
-        weight: 600,
-        fill: text-fill,
-        "ompio",
+      move(
+        text(
+          font: "Metropolis",
+          weight: 700,
+          size: 76pt,
+          fill: text-fill,
+          baseline: 2pt,
+          "ompio",
+        ),
       ),
     )
   } else {
@@ -43,13 +47,13 @@
 
 
 #match(
-  sys.inputs.at("variant", default: "colored-with-text"),
+  sys.inputs.at("variant", default: "bold-with-text"),
   (
-    ("outline", v => draw(stroke: dark + .6pt, ratio: 1.3)),
+    ("outline", v => draw(stroke: dark + 4pt, ratio: 1.3)),
     ("bold", v => draw(fill: dark, ratio: 1.2)),
     ("bold-with-text", v => draw(fill: dark, text-fill: dark, ratio: 1.2)),
     ("colored-bold", v => draw(fill: blue, ratio: 1.2)),
-    ("colored-outline", v => draw(fill: blue, stroke: dark + .6pt, ratio: 1.3)),
+    ("colored-outline", v => draw(fill: blue, stroke: dark + 4pt, ratio: 1.3)),
     ("colored-with-text", v => draw(fill: blue, text-fill: dark.lighten(20%), ratio: 1.2)),
   ),
 )
