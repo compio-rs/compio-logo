@@ -2,8 +2,7 @@
 #import calc: sin, cos
 
 #let blue = rgb("#2cb4d7")
-#let dark = rgb("#1b1b1b")
-
+#let dark = rgb("#303030")
 
 #let path(width, ratio) = {
   import cetz.draw: *

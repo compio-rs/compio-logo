@@ -1,7 +1,13 @@
 .PHONY: all logo
 
-VARIANTS = outline bold colored-outline colored-bold
-FILES = $(foreach variant,${VARIANTS},generated/${variant}.svg)
+VARIANTS = outline\
+           bold\
+           bold-with-text\
+           colored-bold\
+           colored-outline\
+           colored-with-text
+
+FILES = $(foreach v,${VARIANTS},generated/${v}.svg)
 
 all: logo
 
