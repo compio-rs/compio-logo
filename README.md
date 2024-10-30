@@ -27,7 +27,7 @@ Alternatively, it's possible to run the `typst` command to build variant directl
 typst c logo.typ --format=svg --input variant=outline
 ```
 
-This will generate a SVG file in currently directory. Replace `outline` with other variants to build different logos. For more information, please refer to the [typst documentation](https://typst.app/docs).
+This will generate a SVG file in current directory. Replace `outline` with other variants to build different logos. For more information, please refer to the [typst documentation](https://typst.app/docs).
 
 ## License
 
